@@ -1,0 +1,22 @@
+create proc InsertEmp_Sp
+@EmpID int,
+@EmpName nvarchar(50),
+@City nvarchar(50),
+@Age int,
+@Sex nvarchar,
+@Post nvarchar(50),
+@Contact nvarchar(50)
+as
+begin
+Insert into Table_2 (Emp_ID,Emp_Name,City,Age,Sex,Post,Contact)
+values (@EmpID,@EmpName,@City,@Age,@Sex,@Post,@Contact)
+end
+exec InsertEmp_Sp 1002, 'Rohit', 'India', 28, 'Male', 'Manager', '932030020'
+
+create proc ListEmp_Sp
+as
+begin
+select * from Table_2
+end
+
+exec ListEmp_Sp
